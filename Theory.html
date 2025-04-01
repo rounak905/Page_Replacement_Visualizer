@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory of Page Replacement Algorithm</title>
+    <link rel="stylesheet" href="theory.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Nav bar -->
+    <div class="nav">
+        <div class="head">Theory</div>
+        <div class="navlist">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="AboutUs.html"><i class="fas fa-users"></i> About Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- sections starts from here -->
+    <!-- first section -->
+    <section class="header">
+        <div class="header1">
+            <h1><i class="fas fa-book"></i> Page Replacement Algorithms - Theory and Explanation</h1>
+        </div>
+
+        <div>
+            <p>Page replacement algorithms are used in operating systems to manage memory efficiently when the system runs out of physical memory (RAM). When a program needs to access a memory page that is not in RAM, a page fault occurs, and the system needs to bring the required page into memory. If the memory is full, a page replacement algorithm decides which page to remove to make space for the new one.</p>
+        </div>
+    </section>
+
+    <!-- section for the dropdown menu -->
+    <section class="header">
+        <h1><i class="fas fa-list-ul"></i> Types of Page Replacement Algorithms: </h1>
+    </section>
+
+    <!-- second section -->
+    <section class="header">
+        <h1><i class="fas fa-search"></i> 1. First In First Out (FIFO)</h1>
+        <ul class="secli">
+            <li><strong>Concept: </strong>The oldest page in memory is replaced first.</li>
+            <li><strong>Working: </strong>It uses a simple queue to keep track of the order of pages.</li>
+            <li><strong>Example: </strong>
+                <div class="example">
+                    <div><strong>Pages: </strong>1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</div>
+                    <div><strong>Frame Size: </strong>3</div>
+                </div>
+
+                <ul class="secli">
+                    <li>Step 1: Insert pages 1, 2, and 3 → [1, 2, 3]</li>
+                    <li>Step 2: Page 4 comes, remove Page 1 → [4, 2, 3]</li>
+                    <li>Step 3: Continue following the FIFO rule.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div><strong>Advantages: </strong></div>
+        <div>
+            Easy to implement using a queue.
+        </div>
+
+        <div><strong>Disadvantages:</strong> </div>
+        <div>May cause <strong>Belady's Anomaly </strong>(increased frame size leads to more page faults).</div>
+    </section>
+
+    <!-- third section starts from here-->
+    <section class="header">
+        <h1><i class="fas fa-search"></i> 2. Least Recently Used (LRU)</h1>
+
+        <ul class="secli">
+            <li><strong>Concept: </strong>The page that has not been used for the longest time is removed.</li>
+            <li><strong>Working: </strong> It tracks the usage of each page using a timestamp or stack.</li>
+            <li><strong>Example: </strong>
+                <div class="example">
+                    <div><strong>Pages: </strong>1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</div>
+                    <div><strong>Frame Size: </strong>3</div>
+                </div>
+
+                <ul class="secli">
+                    <li>Step 1: Insert pages 1, 2, and 3 → [1, 2, 3]</li>
+                    <li>Step 2: Page 4 comes, remove Page 1 (least recently used) → [4, 2, 3]</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div><strong>Advantages: </strong></div>
+        <div>
+            Better than FIFO in most scenarios.
+        </div>
+
+        <div><strong>Disadvantages:</strong> </div>
+        <div>May cause <strong>Belady's Anomaly </strong>(increased frame size leads to more page faults).</div>
+    </section>
+
+    <!-- fouth section starts from here -->
+    <section class="header neon-gradient-box">
+        <h1><i class="fas fa-search"></i> 3. Optimal Page Replacement (OPT)</h1>
+
+        <ul class="secli">
+            <li><strong>Concept: </strong>Replace the page that will not be used for the longest time in the future.</li>
+            <li><strong>Working: </strong> This algorithm uses future knowledge, which is generally impractical but serves as a benchmark.</li>
+            <li><strong>Example: </strong>
+                <div class="example">
+                    <div><strong>Pages: </strong>1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</div>
+                    <div><strong>Frame Size: </strong>3</div>
+                </div>
+
+                <ul class="secli">
+                    <li>Step 1: Insert pages 1, 2, and 3 → [1, 2, 3]</li>
+                    <li>Step 2: Page 4 comes. Since Page 3 will not be used soon, replace it → [1, 2, 4]</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div><strong>Advantages: </strong></div>
+        <div>
+            Better than FIFO in most scenarios.
+        </div>
+
+        <div><strong>Disadvantages:</strong> </div>
+        <div>May cause <strong>Belady's Anomaly </strong>(increased frame size leads to more page faults).</div>
+    </section>
+
+    <!-- fifth section starts from here:  Performance metrices-->
+    <section class="header innerParent">
+        <h2><i class="fas fa-chart-line"></i> Performance Metrics for Page Replacement Algorithms</h2>
+        <p>Evaluating page replacement algorithms involves comparing the following metrics:</p>
+
+        <div class="innerflex">
+            <div class="faults inner one">
+                <h3><i class="fas fa-exclamation-triangle"></i> 1. Page Faults</h3>
+                <ul class="secli">
+                    <li>Occurs when a requested page is not found in memory.</li>
+                    <li>Formula:
+                        <div><strong>Page Fault Rate</strong> = Number of Page Faults / Total Number of Page Requests</div>
+                    </li>
+                    <li><strong>Goal: </strong>Minimize page faults.</li>
+                </ul>
+            </div>
+            <div class="hit inner two">
+                <h3><i class="fas fa-check-circle"></i> 2. Page Hit Ratio</h3>
+                <ul class="secli">
+                    <li>A <strong>page hit</strong> occurs when a requested page is found in memory.</li>
+                    <li>Formula:
+                        <div><strong>Hit Ratio</strong> = Number of Page Hits/ Total Number of Page Requests</div>
+                    </li>
+                    <li><strong>Goal: </strong>Maximize the hit ratio.</li>
+                </ul>
+            </div>
+            <div class="memory inner three">
+                <h3><i class="fas fa-memory"></i> 3. Memory Utilization</h3>
+                <ul class="secli">
+                    <li>Represents how efficiently memory is used.</li>
+                    <li><strong>Goal: </strong>Achieve maximum memory utilization with fewer page faults.</li>
+                </ul>
+            </div>
+            <div class="time inner four">
+                <h3><i class="fas fa-clock"></i> 4. Execution Time</h3>
+                <ul class="secli">
+                    <li>Time taken to process all page requests, including page fault handling.</li>
+                    <li><strong>Goal: </strong>Reduce the execution time.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- sixth section table starts from here -->
+    <section class="header">
+        <h1><i class="fas fa-balance-scale"></i> Comparison Table of Algorithms</h1>
+        <div class="table">
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>FIFO</th>
+                        <th>LRU</th>
+                        <th>Optimal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Page Faults</td>
+                        <td>High</td>
+                        <td>Moderate</td>
+                        <td>Low</td>
+                    </tr>
+                    <tr>
+                        <td>Hit Ratio</td>
+                        <td>Low</td>
+                        <td>Moderate</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Implementation Complexity</td>
+                        <td>Simple</td>
+                        <td>Moderate</td>
+                        <td>Complex(Impractical)</td>
+                    </tr>
+                    <tr>
+                        <td>Real-World Usage</td>
+                        <td>Rare</td>
+                        <td>Common</td>
+                        <td>BenchMarking Only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Particles background -->
+    <div id="particles-js"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 50, density: { enable: true, value_area: 800 } },
+                        color: { value: "#6c5ce7" },
+                        opacity: { value: 0.1, random: false },
+                        size: { value: 3, random: true },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#6c5ce7",
+                            opacity: 0.1,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 1,
+                            direction: "none",
+                            random: false,
+                            straight: false,
+                            out_mode: "out",
+                            bounce: false,
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "repulse" },
+                            onclick: { enable: true, mode: "push" },
+                            resize: true
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
+        });
+    </script>
+</body>
+</html>
