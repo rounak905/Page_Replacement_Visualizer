@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+ body{
+    background: linear-gradient(135deg, #121212, #2d3436);
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+} 
+
+/* nav styles starts from here */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 100;
+} 
+
+.head{
+    line-height: 1.2;
+}
+
+.page{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #6c5ce7;
+}
+
+.replace{
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #6c5ce7, #00cec9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.headlist ul{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.headlist ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.headlist ul li a:hover{
+    background: rgba(108, 92, 231, 0.2);
+    transform: translateY(-3px);
+}
+
+.headlist ul li{
+    font-size: x-large;
+}
+
+.headlist ul li:hover{
+    text-decoration: underline;
+    cursor:pointer;
+    transform:scale(1.2) translateY(20%) ;
+    opacity:0.9;
+    transition-property: text-decoration , transform , opacity;
+    transition-duration: 0.5s;
+    /* transition-delay: 1s; */
+}
+
+/* header  styles*/ 
+/* .header{
+    display: flex;
+    color:white;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top:50%;
+    left:50%;
+
+} */
+    /* position:relative; */
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
+        max-width: 800px;
+        z-index: 1;
+    }
+
+    
+    
+
+
+.one{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.two{
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #6c5ce7, #00cec9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.three{
+    font-size: 2rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1s forwards;
+}
+
+/* button styles */
+/* .btn{
+   position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left:50%;
+    top:50%;
+    
+
+} */
+
+.btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: calc(50% + 150px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1.5s forwards;
+}
+
+/* @media(max-width ) */
+
+.btn a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn button{
+    padding:10px;
+    background-color: aquamarine;
+    color:white;
+    font-weight: 400;
+    font-size: large ;
+    border-radius: 30px;
+    margin-left: 80px;
+    border: none;
+
+    
+}
+
+.btn button:hover{
+    transform: scale(1.2) translateY(10%);
+    opacity:0.9;
+    border-top-right-radius: 0%;
+    border-bottom-left-radius: 0%;
+    
+    cursor:pointer;
+    transition-property: transform , opacity ,border-top-right-radius, border-bottom-left-radius;
+    transition-duration: 1s;
+}
+
+/* .transition{
+    transform: translateY(2);
+    transition: transform 2s;
+} */
+
+.neon-gradient-box {
+    position: relative;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #6c5ce7, #00cec9);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+}
+
+.neon-gradient-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(108, 92, 231, 0.5);
+}
+
+.neon-gradient-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.neon-gradient-box:hover::before {
+    left: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .head {
+        margin-bottom: 1rem;
+    }
+    
+    .headlist ul {
+        margin-right: 0;
+        gap: 1rem;
+    }
+    
+    .two {
+        font-size: 2rem;
+    }
+    
+    .three {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        top: calc(50% + 130px);
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        font-size: 1.2rem;
+    }
+    
+    .replace {
+        font-size: 1.5rem;
+    }
+    
+    .headlist ul li a {
+        font-size: 1rem;
+    }
+    
+    .one {
+        font-size: 1.2rem;
+    }
+    
+    .two {
+        font-size: 1.5rem;
+    }
+    
+    .three {
+        font-size: 1.2rem;
+    }
+}
+
+
+
