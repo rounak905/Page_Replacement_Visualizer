@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Page Replacement Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="aboutus.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">Page Replacement<br>Simulator</div>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="Theory.html"><i class="fas fa-book"></i> Theory</a></li>
+    </ul>
+  </nav>
+
+  <div class="about-section">
+    <div class="about-content">
+      <h1><i class="fas fa-users"></i> About Us</h1>
+      <p>Welcome to the <strong>Page Replacement Simulator</strong>, your go-to solution for understanding and exploring the intricacies of page replacement algorithms in operating systems. Our simulator is designed to demonstrate key algorithms: <strong>FIFO</strong>, <strong>LRU</strong>, and <strong>Optimal Page Replacement</strong>.</p>
+      
+      <p>Our website consists of two sections:</p>
+      <ul>
+        <li><i class="fas fa-home"></i> <strong>Home Page:</strong> Dive into interactive simulations and visualize how these algorithms operate.</li>
+        <li><i class="fas fa-book"></i> <strong>Theory Section:</strong> Learn the mechanics and real-world applications of these algorithms.</li>
+      </ul>
+      
+      <p>We are a passionate team dedicated to creating valuable resources:</p>
+      <ul class="team-list">
+        <li>
+          <i class="fas fa-user-cog"></i> <strong>Harshita</strong>
+          <span class="description">Coding wizard who implemented the simulator's algorithms.</span>
+        </li>
+        <li>
+          <i class="fas fa-laptop-code"></i> <strong>Kartik</strong>
+          <span class="description">A frontend developer passionate about designing seamless and engaging user experiences.</span>
+        </li>
+        <li>
+          <i class="fas fa-pencil-alt"></i> <strong>Rounak</strong>
+          <span class="description">Content creator making the platform informative and learner-friendly.</span>
+        </li>
+      </ul>
+    </div>
+    <img src="aboutUs.jpg" alt="About Us" />
+  </div>
+
+  <!-- Particles background -->
+  <div id="particles-js"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+          particles: {
+            number: { value: 50, density: { enable: true, value_area: 800 } },
+            color: { value: "#6c5ce7" },
+            opacity: { value: 0.1, random: false },
+            size: { value: 3, random: true },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: "#6c5ce7",
+              opacity: 0.1,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 1,
+              direction: "none",
+              random: false,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+            }
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: { enable: true, mode: "repulse" },
+              onclick: { enable: true, mode: "push" },
+              resize: true
+            }
+          },
+          retina_detect: true
+        });
+      }
+    });
+  </script>
+</body>
+</html>
