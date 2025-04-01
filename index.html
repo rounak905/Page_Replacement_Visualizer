@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Replacement Algorithm Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="head">
+            <span class="page">Page</span><br>
+            <span class="replace">Replacement</span><br>
+            Simulator
+        </div>
+        <div class="headlist">
+            <ul>
+                <li><a href="Theory.html"><i class="fas fa-book"></i> Theory</a></li>
+                <li><a href="AboutUs.html"><i class="fas fa-users"></i> About Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="one">Welcome!</div>
+        <div class="two">To Page Replacement Algorithm</div>
+        <div class="three">Simulator</div>
+    </div>
+
+    <!-- Button -->
+    <div class="btn">
+        <button class="neon-gradient-box">
+            <a href="metrics.html">Calculate Metrics <i class="fas fa-calculator"></i></a>
+        </button>
+    </div>
+
+    <!-- Particles background - purely decorative -->
+    <div id="particles-js"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles background
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: "#ffffff" },
+                        opacity: { value: 0.2, random: false },
+                        size: { value: 3, random: true },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#6c5ce7",
+                            opacity: 0.2,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            direction: "none",
+                            random: false,
+                            straight: false,
+                            out_mode: "out",
+                            bounce: false,
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "repulse" },
+                            onclick: { enable: true, mode: "push" },
+                            resize: true
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
+        });
+    </script>
+</body>
+</html>
